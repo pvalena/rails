@@ -172,6 +172,7 @@ module ApplicationTests
 
     test "ARGV is mutated as expected" do
       require "#{app_path}/config/environment"
+      require 'rails/command'
       Rails::Command.const_set("APP_PATH", "rails/all")
 
       FileUtils.cd(rails_root) do
