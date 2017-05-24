@@ -54,7 +54,7 @@ class Rails::Engine::CommandsTest < ActiveSupport::TestCase
 
     master, slave = PTY.open
     pid = spawn_command("server", slave)
-    assert_output("Listening on", master)
+    assert_output("WEBrick::HTTPServer#start: pid=", master)
   ensure
     kill(pid)
   end
