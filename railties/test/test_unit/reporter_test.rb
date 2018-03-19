@@ -188,7 +188,7 @@ class TestUnitReporterTest < ActiveSupport::TestCase
     def skipped_test
       st = Minitest::Result.from(ExampleTest.new(:woot))
       st.failures << begin
-                       raise Minitest::Skip, "skipchurches, misstemples"
+                       st.skip "skipchurches, misstemples"
                      rescue Minitest::Assertion => e
                        e
                      end
